@@ -1,0 +1,20 @@
+[package]
+name = "nadar_rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+bench = false
+path = "src/main.rs"
+name = "cargo-nadar"
+
+[dependencies]
+syn = { version = "1.0", features = ["derive", "full", "extra-traits","visit", "visit-mut"] }
+quote = "1.0"
+
+
+[patch.crates-io]
+syn = { path = "./vendor/syn" }
+quote = { path = "./vendor/quote" }
